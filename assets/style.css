@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nabla:EDPT,EHLT@30..200,24&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+*::selection{
+	background: #ffa600;
+	color: cyan;
+}
+
+html {
+	scroll-behavior:smooth;
+  }
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	background-color: black;
+	font-size: 10px;
+}
+
+ /* heading 3d roatation style */
+.heading {
+	font-size: 5vw;
+	font-family: Nabla;
+}
+
+@font-palette-values --Nabla {
+	font-family: Nabla;
+	base-palette: 2;
+}
+
+.heading span {
+	animation: depth 1s ease-in-out alternate infinite;
+	position: relative;
+	display: inline-block;
+	font-variation-settings: "EDPT" 30;
+	font-palette: --Nabla;
+	@for $i from 1 through 12 {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * 0.1s;
+		}
+	}
+}
+
+@keyframes depth {
+	0% {
+		transform: translatex(0) translatey(0);
+	}
+	100% {
+		font-variation-settings: "EDPT" 200;
+		transform: translatex(0.15em) translatey(0.1em);
+	}
+}
+
+/* typing animation */
+
+.subhead{
+	color: #000000;
+	font-weight: bolder;
+	margin-left: auto !important;
+	font-size: larger;
+	margin-top: 50px !important;
+}
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+	font-size: 2.5em;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	line-height: 200%;
+	letter-spacing: 3px;
+}
+
+.cursor {
+    position: relative;
+    width: 29ch; /* Match number of characters */
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+/* Animation */
+.typewriter-animation {
+    animation: 
+      typewriter 3s steps(29) 1s 1 normal both,  /* 34 steps for 34 characters */
+      blinkingCursor 500ms steps(1) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 29ch; } /* Match container and character count */
+}
+
+@keyframes blinkingCursor {
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent; }
+}
+
+/*------------Parallax Section ONE landing------------*/
+.layer1 {
+	background-image: url("images/bg11.jpg");
+	height: 115vh;
+	display: grid;
+	width: 100%;
+}
+
+#title {
+	text-align: center;
+	margin: auto;
+}
+
+#title p {
+	margin-left: 23vw;
+}
+
+/*------------Parallax Section TWO bnw------------*/
+.layer2 {
+	background: url("images/bg2.png");
+	width: 100%;
+	position: relative;
+	text-align: center;
+	margin-bottom: 8vh;
+}
+
+#quote {
+	padding-top: 30px;
+	line-height: 130%;
+	font-weight: 600;
+	font-size: 1.2em;
+	color: #ffa600;
+}
+
+#quote span {
+	margin-left: 36vw;
+	font-size: 20px;
+	color: #000000;
+    
+}
+
+
+
+.layer2:hover .words {
+	visibility: visible;
+	opacity: 0.9;
+}
+
+.layer2 .words {
+	margin-top: 29vh;
+	color: rgb(255, 255, 255);
+	font-weight: 500;
+	line-height: 1.7;
+	font-size: 30px;
+	font: "Orbitron";
+	letter-spacing: 1px;
+}
+.Unheard{
+	color: #ddff00;
+	font-weight: bold;
+	font-size: 35px;
+}
+.Unconquered {
+	color: #ff0000;
+	font-weight: bolder;
+	font-size: 40px;
+}
+
+#quote span {
+	line-height: 3 ;
+	display: inline;
+	background-image: linear-gradient(
+	  transparent 50%,
+	  #e1fffe 50%,
+	  #b0f8ff 85%,
+	  transparent 85%,
+	  transparent 100%
+	);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	/* Don't animate by default */
+  }
+  
+  #quote span.animate {
+	animation: animatedBackground 3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  @keyframes animatedBackground {
+	to {
+	  background-size: 100% 100%;
+	}
+  }
+  
+/*------------ ** GRID ** ------------*/
+.grid-right {
+	display: grid;
+	grid-template-columns: auto 30vw 34vw auto;
+	grid-template-areas: ". text img .";
+}
+
+.grid-left {
+	display: grid;
+	grid-template-columns: auto 34vw 30vw auto;
+	grid-template-areas: ". img text .";
+}
+
+.img-grid {
+	grid-area: img;
+	height: 50vh;
+	margin-bottom: 8vh;
+	border-radius: 20px;
+}
+
+.text-right {
+	grid-area: text;
+	color: white;
+	align-self: center;
+	text-align: center;
+	margin: 0 auto 8vh auto;
+	padding-left: 1vw;
+}
+.text-right span {
+	color: #c2dc1a;
+}
+
+.text-left {
+	grid-area: text;
+	color: white;
+	align-self: center;
+	text-align: center;
+	margin: 0 auto 8vh auto;
+	padding-right: 1vw;
+}
+.text-left span {
+	color: #c2dc1a;
+}
+
+/*------------Parallax Section THREE ------------*/ 
+.layer3 {
+	background: url("images/bg3.png");
+	background-size: 66% auto !important;
+}
+
+.layer4 {
+	background: url("images/bg3.png");
+	background-size: 66% auto !important;
+}
+
+.layer5 {
+	background: url("images/bg3.png");
+	background-size: 66% auto !important;
+	height: 70vh;
+	width: 66%;
+	margin: auto;
+	border-radius: 20px;
+}
+
+/*------------Parallax Section FOUR p1------------*/ 
+.layer6 {
+	background: url("images/p1.jpg")  ;
+	background-size: contain !important;
+	height: 105vh;
+	width: 100%;
+	margin-bottom: 18px;
+	position: relative;
+}
+
+.layer6:hover .words {
+	visibility: visible;
+	opacity: 0.9;
+}
+
+.layer6 .words {
+	margin-top: 22vh;
+	width: 40vw;
+	margin-left: 15%;
+    padding-left: 15%;
+	color: #c2dc1a;
+	letter-spacing: 1.3px;
+	font-weight: 600;
+	font-size: 29px;
+}
+.layer6 .words span {
+	color: #ffffff;
+}
+
+/*------------Parallax Section FIVE proof------------*/ 
+.layer7 {
+	background: url("images/jelly.png");
+	background-size: 37% auto !important;
+	background-position: 74% !important;
+}
+
+.layer8 {
+	background: url("images/angler.png");
+	background-size: 37% auto !important;
+	background-position: 26% !important;
+}
+
+/*------------Parallax Section SIX star map------------*/ 
+.layer9 {
+	background: url("images/octopus.png");
+	background-size: 37% auto !important;
+	background-position: 74% !important;
+
+}
+
+.layer10 {
+	background: url("images/strafish.png");
+	background-size: 37% auto !important;
+	background-position: 26% !important;
+}
+
+
+
+/*------------Parallax Section SEVEN revolution------------*/ 
+.layer11 {
+	background: url("images/last.jpg");
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.last {
+	color:#ffa600;
+	font-weight: 600;
+	font-family: 'Saira Semi Condensed', sans-serif;
+
+}
+.layer11:hover .words {
+	visibility: visible;
+	opacity: 0.9;
+}
+
+.layer11 .words {
+	margin-top: 22vh;
+	letter-spacing: 1.0px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+
+/*------------Text appear on scroll------------*/
+.wrap-under {
+	background-color: transparent;
+	min-width: 100%;
+	min-height: 700px;
+	
+}
+
+.words {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: white;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .5s, visibility .1s;
+}
+
+/*------------PARALLAX effect class------------*/
+.parallax {
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+/*------------Media Queries------------*/
+
+/*-------medium--------*/
+@media screen and (max-width: 1200px){
+	.container {
+		font-size: 1.9em;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.words {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	#quote {
+		font-weight: 700;
+		padding-left: 5px;
+		padding-right: 5px;
+		text-shadow: 0px 1px rgba(90, 90, 90, .8);
+	}
+
+	.grid-left, .grid-right {
+		grid-template-columns: 100vw;
+		grid-template-areas: 
+			"img"
+			"text";
+	}
+
+	.layer3, .layer5 {
+		display: none;
+	}
+
+	.layer11 {
+		height: 100vh;
+	}
+
+	.layer10, .layer9, .layer8, layer7 {
+		background-size: 65% auto !important;
+	}
+
+	.links {
+		width: 40vw;
+		transition: none;
+	}
+}
+
+/*-------small--------*/
+@media screen and (max-width: 760px){
+	.container {
+		font-size: 1.3em;
+	}
+
+	.layer6 .words {
+	width: 50vw;
+	margin-left: 5%;
+}
+
+	.links {
+		width: 80vw;
+		height: 13vh;
+	}
+}
+
+/* footer styling */
+
+.footer {
+	background-color: black;
+	color: rgb(255, 255, 255);
+	font-family: 'Orbitron', sans-serif;
+	padding: 10px 10px;
+	text-align: center;
+	line-height: 1.8;
+	font-family: 'Saira Semi Condensed', sans-serif;
+
+  
+  .footer-overlay {
+	max-width: 900px;
+	margin: 0 auto;
+  }
+  
+  .footer-icons {
+	margin: 30px 0 20px;
+  }
+  
+  .footer-icons img {
+	width: 40px;
+	height: 40px;
+	margin: 0 15px;
+	transition: transform 0.3s ease, filter 0.3s ease;
+	filter: brightness(0.9);
+  }
+  
+  .footer-icons img:hover {
+	transform: scale(1.1);
+	filter: brightness(1.3);
+  }
+  
+  .footer-bottom {
+	font-style: none;
+	margin-top: 20px;
+	color: #999;
+	font-size: 15px;
+  }
+
+  .this_project{
+	font-size: 22px;
+	margin-top: 10px;
+  }
+
+   .footer-bottom a {
+	color: #ffffff;
+	font-style: italic;
+	text-decoration:underline;
+   }
+
+
+  .footer-icons a {
+	margin: 0 15px;
+	display: inline-block;
+	color: white;
+	transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-icons a:hover {
+	color: #00ffff; /* Neon aqua glow on hover */
+	transform: scale(1.2);
+  }
+  
+  .footer-icons .icon {
+	width: 40px;
+	height: 40px;
+	fill: currentColor;
+  }
+  
+}
+
+/* ------- Entry animations on scroll -------- */
+.animate-on-scroll {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s ease-out, transform 1s ease-out;
+	will-change: transform, opacity;
+}
+
+.animate-on-scroll.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+/* 
+
+
+/* water wave animation */
+.content {
+		position: relative;
+		width: 150%;
+		height: 130px; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	
+	
+}
+
+.content h2 {
+	color: #fff;
+	font-size: 3em;
+		position: absolute;
+		font-size: 3em;
+		text-align: center;
+	
+	
+	transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #03a9f4;
+}
+
+.content h2:nth-child(2) {
+	color: #03a9f4;
+	animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+
+.author {
+	color: cyan;
+}
+
+
+
+
